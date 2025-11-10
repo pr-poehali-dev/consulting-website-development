@@ -194,12 +194,16 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <nav className="fixed top-0 w-full bg-background/98 backdrop-blur-sm border-b border-border z-50">
+      <nav className="fixed top-0 w-full bg-background/98 backdrop-blur-md border-b border-border z-50">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <h1 className="text-2xl font-bold text-foreground">
-              COD <span className="text-primary">Consulting</span>
-            </h1>
+            <div className="flex items-center gap-3">
+              <img 
+                src="https://cdn.poehali.dev/files/bf4be80a-3d44-45f4-acec-f62ee0f3ed5e.png" 
+                alt="COD Consulting" 
+                className="h-10 w-auto"
+              />
+            </div>
             <div className="hidden md:flex items-center gap-8">
               <button
                 onClick={() => scrollToSection('services')}
@@ -254,12 +258,12 @@ const Index = () => {
             {problems.map((problem, index) => (
               <Card
                 key={index}
-                className="border-2 hover:border-primary/50 transition-all duration-300 animate-fade-in-up"
+                className="border border-border hover:border-primary/30 transition-all duration-300 animate-fade-in-up bg-card/50 backdrop-blur-sm"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <CardHeader>
-                  <div className="w-14 h-14 bg-destructive/10 rounded-xl flex items-center justify-center mb-4">
-                    <Icon name={problem.icon} size={28} className="text-destructive" />
+                  <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                    <Icon name={problem.icon} size={28} className="text-primary" />
                   </div>
                   <CardTitle className="text-xl">{problem.title}</CardTitle>
                 </CardHeader>
@@ -270,7 +274,7 @@ const Index = () => {
             ))}
           </div>
 
-          <div className="bg-secondary/30 rounded-3xl p-12 mb-20 animate-fade-in">
+          <div className="bg-card/30 backdrop-blur-sm border border-border rounded-3xl p-12 mb-20 animate-fade-in">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-3">Наша методология</h2>
               <p className="text-muted-foreground">
@@ -297,7 +301,7 @@ const Index = () => {
             </div>
           </div>
 
-          <Card className="bg-primary text-primary-foreground border-0 animate-scale-in">
+          <Card className="bg-primary text-primary-foreground border border-primary/20 animate-scale-in">
             <CardContent className="p-12 text-center">
               <Badge variant="secondary" className="mb-4 text-primary">
                 Формат работы
@@ -312,7 +316,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="services" className="py-20 px-6 bg-secondary/20">
+      <section id="services" className="py-20 px-6 bg-background">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl font-bold mb-4">
@@ -327,8 +331,8 @@ const Index = () => {
             {services.map((service, index) => (
               <Card
                 key={index}
-                className={`relative hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 animate-scale-in ${
-                  service.popular ? 'border-2 border-primary' : ''
+                className={`relative hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 animate-scale-in bg-card/50 backdrop-blur-sm ${
+                  service.popular ? 'border-2 border-primary' : 'border border-border'
                 }`}
                 style={{ animationDelay: `${index * 0.15}s` }}
               >
@@ -372,7 +376,7 @@ const Index = () => {
             ))}
           </div>
 
-          <Card className="border-2 border-dashed border-primary/30 animate-fade-in">
+          <Card className="border-2 border-dashed border-primary/20 animate-fade-in bg-card/30 backdrop-blur-sm">
             <CardContent className="p-12 text-center">
               <h3 className="text-2xl font-bold mb-3">Нужно больше, чем стандартный пакет?</h3>
               <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
@@ -430,7 +434,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="for-who" className="py-20 px-6 bg-secondary/20">
+      <section id="for-who" className="py-20 px-6 bg-background">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl font-bold mb-4">
@@ -493,7 +497,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="cases" className="py-20 px-6 bg-secondary/20">
+      <section id="cases" className="py-20 px-6 bg-background">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16 animate-fade-in">
             <Badge variant="outline" className="mb-4">
@@ -502,7 +506,7 @@ const Index = () => {
             <h2 className="text-4xl font-bold mb-4">Проверенный результат</h2>
           </div>
 
-          <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 animate-scale-in">
+          <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 animate-scale-in bg-card/50 backdrop-blur-sm border border-border">
             <div className="grid md:grid-cols-2">
               <img
                 src={caseStudy.image}
@@ -575,7 +579,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="contact" className="py-20 px-6 bg-secondary/20">
+      <section id="contact" className="py-20 px-6 bg-background">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12 animate-fade-in">
             <h2 className="text-4xl font-bold mb-4">
@@ -586,7 +590,7 @@ const Index = () => {
             </p>
           </div>
 
-          <Card className="animate-scale-in">
+          <Card className="animate-scale-in bg-card/50 backdrop-blur-sm border border-border">
             <CardContent className="p-10">
               <form className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
@@ -650,9 +654,11 @@ const Index = () => {
         <div className="container mx-auto max-w-7xl">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <h3 className="font-bold text-lg mb-4">
-                COD <span className="text-primary">Consulting</span>
-              </h3>
+              <img 
+                src="https://cdn.poehali.dev/files/bf4be80a-3d44-45f4-acec-f62ee0f3ed5e.png" 
+                alt="COD Consulting" 
+                className="h-12 w-auto mb-4"
+              />
               <p className="text-sm text-muted-foreground">
                 Операционные системы для масштабирования бизнеса без хаоса
               </p>
